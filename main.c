@@ -2,11 +2,9 @@
 #include <stdlib.h>
 #include <math.h>
 
-
-#define N 1000000
+#define N 100000000000
 #define r 1
 #define PI 3.141592653589793238462643
-
 
 int isCircle(double x,double y){
     double p = (double) pow(x,2) + pow(y,2);
@@ -44,26 +42,3 @@ void main() {
 
     printf("P = %lf\n",P);
 }
-
-
-
-
-
-
-
-
-
-
-// on titre un point aléatoire dans le carré
-// probabilité qu'il se situe dans le cercle ?
-// pro = surface1/surface2
-// p = pir²/2r² => pi/4
-// => on a donc : pi = 4 * P
-
-// N(x,y) avec x et y [-1,1]
-// pour chaque point, on regarde si il se situe dans le cercle , si oui on icrémente de compteur de 1
-//I = nb de point dans le cercle
-// P = I/N => valeur approché de pi
-
-
-
