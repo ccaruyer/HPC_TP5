@@ -1,8 +1,9 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <math.h>
+#include <mpi.h>
 
-#define N 100000000000
+#define N 1000000000
 #define r 1
 #define PI 3.141592653589793238462643
 
@@ -41,4 +42,17 @@ void main() {
     printf("Il y a %d point(s) dans le cercle sur %d points\n",I,N);
 
     printf("P = %lf\n",P);
+}
+
+//fonction permettant d'estimation de PI
+//utilisation de communication collective
+void estimationPiParallele(){
+    MPI_Init( );
+    int nbProcess;
+    MPI_Comm_size(MPI_COMM_WORLD, &nbProcess);
+    MPI_Comm groupe = MPI_COMM_WORLD;
+    int myId;
+    MPI_Comm_rank(groupe,&myId);
+    MPI_Finalize();
+
 }
